@@ -14,17 +14,17 @@ function Home() {
         <div className="home__row">
           <Product
             id="123000"
-            title="The Lean Startup"
-            price={29.99}
+            title="The Art of Computer Programming, Volumes 1-4A Boxed Set 1st Edition"
+            price={187.98}
             rating={5}
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZYmfFbZTFAbu-SEFRB0w_Mi4-tSUsY80u6g&usqp=CAU"
+            image="https://m.media-amazon.com/images/I/41IHBJFnG3L._AC_UL320_.jpg"
           />
           <Product
             id="123001"
-            title="adidas Men's Ultraboost 20 Sneaker"
+            title="Xbox Wireless Controller - Black"
             price={53.92}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/61biysA%2B61L._AC_UY535_.jpg"
+            image="https://images-na.ssl-images-amazon.com/images/I/41LO2OX6pRL._AC_SY200_.jpg"
           />
         </div>
         <div className="home__row">

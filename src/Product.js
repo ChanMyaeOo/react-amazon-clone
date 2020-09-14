@@ -1,9 +1,19 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import StarsIcon from "@material-ui/icons/Stars";
+import { withStyles } from "@material-ui/core/styles";
 
-function Product({ id, title, price, rating, image }) {
+const styles = {
+  root: {
+    color: "#f0c14b",
+  },
+};
+
+function Product({ id, title, price, rating, image, classes }) {
   const [{ basket }, dispatch] = useStateValue();
+
+  console.log(classes);
 
   const addToBasket = () => {
     // dispatch item into the data layer
@@ -21,7 +31,7 @@ function Product({ id, title, price, rating, image }) {
   return (
     <div className="product">
       <div className="product__info">
-        <p>{title}</p>
+        <p className="product__title">{title}</p>
         <p className="product__price">
           <small>$</small>
           <strong>{price}</strong>
@@ -30,7 +40,7 @@ function Product({ id, title, price, rating, image }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>*</p>
+              <StarsIcon classes={{ root: classes.root }} />
             ))}
         </div>
       </div>
@@ -40,4 +50,4 @@ function Product({ id, title, price, rating, image }) {
   );
 }
 
-export default Product;
+export default withStyles(styles)(Product);
