@@ -13,8 +13,6 @@ const styles = {
 function Product({ id, title, price, rating, image, classes }) {
   const [{ basket }, dispatch] = useStateValue();
 
-  console.log(classes);
-
   const addToBasket = () => {
     // dispatch item into the data layer
     dispatch({

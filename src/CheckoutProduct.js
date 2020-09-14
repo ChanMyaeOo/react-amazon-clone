@@ -1,8 +1,24 @@
 import React from "react";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
+import StarsIcon from "@material-ui/icons/Stars";
+import { withStyles } from "@material-ui/core/styles";
 
-function CheckoutProduct({ id, image, title, price, rating, hiddenButton }) {
+const styles = {
+  root: {
+    color: "#f0c14b",
+  },
+};
+
+function CheckoutProduct({
+  id,
+  image,
+  title,
+  price,
+  rating,
+  hiddenButton,
+  classes,
+}) {
   const [{ basket }, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
@@ -25,7 +41,7 @@ function CheckoutProduct({ id, image, title, price, rating, hiddenButton }) {
           {Array(rating)
             .fill()
             .map(() => (
-              <p>*</p>
+              <StarsIcon classes={{ root: classes.root }} />
             ))}
         </div>
         {!hiddenButton && (
@@ -36,4 +52,4 @@ function CheckoutProduct({ id, image, title, price, rating, hiddenButton }) {
   );
 }
 
-export default CheckoutProduct;
+export default withStyles(styles)(CheckoutProduct);
