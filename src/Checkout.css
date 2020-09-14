@@ -14,3 +14,20 @@
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
+
+.checkout__right {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .checkout {
+    flex-direction: column;
+  }
+  .checkout__ad {
+    display: none;
+  }
+
+  .checkout__right {
+    width: 100%;
+  }
+}
